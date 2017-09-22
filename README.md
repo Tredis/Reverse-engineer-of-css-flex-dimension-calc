@@ -19,8 +19,9 @@ react is default flex
 
 flexDirection is not passed down from parent, column is default if not specified(column can be forced though, see __)
 
-if display prop exists and is non flex(even display:null), it's highjacked by flex parent and forced into display:flex further forcing flex:initial (0 1 auto)* to be default (even with no flex prop); no display prop results in flex:none (0 0 auto)*
- * (grow shrink basis)
+if display prop exists and is non flex(even display:null), it's highjacked by flex parent and forced into display:flex further forcing flex:initial (0 1 auto)* to be default (even with no flex prop); no display prop results in flex:none (0 0 auto)*  
+  \* (grow shrink basis)
+
 Forcing display to a non-flex value wont stop default flex options! and cannot be overridden by even definite height/width (in the main axis obviously), so you must do flexShrink:0[and flexGrow:0 flexBasis:null to be safe] (not even flex:none will work because, react doesn't know 'none')  
 if display prop exists and is non flex(even display:null), it's highjacked by flex parent to force flexDirection:column!!! not just make it default! unlike the other flex params (to be clear, it'll override an explicit flexDirection:row)
 
