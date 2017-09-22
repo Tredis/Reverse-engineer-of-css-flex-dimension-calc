@@ -32,6 +32,8 @@ chrome : content height is not passed down (except through stretch! (only flexDi
 firefox: content height is passed down only from column and inline, but not from row or block (except through stretch! (again :row obviously))  
 ...which is silly since column is like block and row is like inline, ugh.
 
+inherit copies and pastes the prop, doesn't pass down any calculated values from parent.
+
 Main-algo:  
 flexBasis(+grow/shrink) -> height/width  
 (Remember, flex can be implied and still override explicit height/width, see __)
