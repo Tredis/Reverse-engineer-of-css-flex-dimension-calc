@@ -21,17 +21,14 @@ if not display:flex, display:*** (even display:null ) highjacked by flex parent 
 Forcing display to a non-flex value wont stop default flex options! and cannot be overridden by even definite height/width (in the main axis obviously), so you must do flexShrink:0[and flexGrow:0 flexBasis:null to be safe] (not even flex:none will work because, react doesn't know 'none')  
 if not display:flex, display:*** (even display:null ) highjacked by flex parent to force flexDirection:column!!! not just make it default! unlike the other flex params
 
-indefinite dim and flexBasis doesnt contribute to parent's content width
-
+indefinite dim and flexBasis doesnt contribute(=0) to parent's content dim for both directions  
 Only for width, child's definite flexBasis does not contribute to parent's content width
-
-when calculating content, all % are zero for both directions
 
 height, width, content done first in a tree traversal, then flex is another seperate traversal starting from the top.
 
-content width is always passed down
+content width is always passed down.
 chrome : content height is not passed down (except through stretch! (only flexDirection:row obviously))
-firefox: content height is passed down only from column and inline, but not from row or block??(except through stretch! (again :row obviously))
+firefox: content height is passed down only from column and inline, but not from row or block (except through stretch! (again :row obviously))
 
 Main-algo:
 flexBasis(+grow/shrink) -> height/width
