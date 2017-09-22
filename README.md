@@ -15,10 +15,10 @@ non-stretch align = align + content
 
 react is default flex
 
-flexDirection is not passed, column is default if not specified
+flexDirection is not passed, column is default if not specified  
 if not display:flex, display:*** (even display:null ) highjacked by flex parent and forced to display:flex further forcing flex:initial (0 1 auto) to be default (even with no flex prop); no display param results in flex:none (0 0 auto)
 
-Forcing display to a non-flex value wont stop default flex options! and cannot be overridden by even definite height/width (in the main axis obviously), so you must do flexShrink:0[and flexGrow:0 flexBasis:null to be safe] (not even flex:none will work because, react doesn't know 'none')
+Forcing display to a non-flex value wont stop default flex options! and cannot be overridden by even definite height/width (in the main axis obviously), so you must do flexShrink:0[and flexGrow:0 flexBasis:null to be safe] (not even flex:none will work because, react doesn't know 'none')  
 if not display:flex, display:*** (even display:null ) highjacked by flex parent to force flexDirection:column!!! not just make it default! unlike the other flex params
 
 indefinite dim and flexBasis doesnt contribute to parent's content width
